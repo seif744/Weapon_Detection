@@ -25,9 +25,9 @@ model = RFDETRMedium()
 
 model.train(
     dataset_dir='datasets_coco',
-    output_dir='runs_rfdetr/rfdetr_m_v1',
+    output_dir='runs_rfdetr/rfdetr_m_v2',
 
-    epochs=50,
+    epochs=150,
 
     # --- SPEEDUP 1: same effective batch (16), one optimizer step not two.
     # 8x2 and 16x1 are mathematically equivalent, but 16x1 avoids the
@@ -60,7 +60,7 @@ model.train(
     # Stop early if val plateaus. Patience is counted in EVAL steps, and
     # evals now happen every 3 epochs, so 5 ~= 15 epochs of no improvement.
     early_stopping=True,
-    early_stopping_patience=5,
+    early_stopping_patience=8,
 
     log_per_class_metrics=True,   # per-class, not just the macro average
     run_test=True,                # scores the 509-image test split at the end
