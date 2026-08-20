@@ -1,0 +1,4 @@
+[core]
+    remote = nas_storage
+['remote "nas_storage"']
+    url = ssh://Annotation@192.168.1.178:2222/ai_data_collection/weapons_dvc
