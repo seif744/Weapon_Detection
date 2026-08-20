@@ -4,7 +4,7 @@ __pycache__/
 *.pyc
 
 datasets/
-datatsets_coco/
+datasets_coco/
 datasets_degraded/
 degraded/
 datasets_merged/
