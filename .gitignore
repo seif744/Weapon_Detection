@@ -25,3 +25,4 @@ videos/
 *.avi
 
 fasterrcnn-pytorch-training-pipeline/
+/datasets_merged
