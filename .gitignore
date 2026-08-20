@@ -10,8 +10,7 @@ degraded/
 datasets_merged/
 *.cache
 
-runs/
-runs_rfdetr/
+
 wandb/
 rfdetr_env/
 *.pt
@@ -26,3 +25,12 @@ videos/
 
 fasterrcnn-pytorch-training-pipeline/
 /datasets_merged
+
+
+runs/**
+runs_rfdetr/**
+!runs/**/
+!runs_rfdetr/**/
+!runs/**/*.dvc
+!runs_rfdetr/**/*.dvc
+*.ckpt
