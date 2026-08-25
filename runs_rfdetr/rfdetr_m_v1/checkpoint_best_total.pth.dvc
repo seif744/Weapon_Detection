@@ -1,0 +1,5 @@
+outs:
+- md5: bb52f849cf250c3b738f5d237197005b
+  size: 133807389
+  hash: md5
+  path: checkpoint_best_total.pth
