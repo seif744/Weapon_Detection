@@ -1,0 +1,6 @@
+outs:
+- md5: 0144316eaf2fb37ea96bfc15cb8183a5.dir
+  size: 2425772107
+  nfiles: 11
+  hash: md5
+  path: rfdetr_l_v4
