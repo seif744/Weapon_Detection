@@ -1,0 +1,302 @@
+nohup: ignoring input
+[2026-08-25 10:07:59] [INFO] rf-detr - File /home/easemyai/.roboflow/models/rf-detr-large-2026.pth already exists with correct MD5 hash.
+[2026-08-25 10:07:59] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-08-25 10:07:59] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-08-25 10:07:59] [INFO] rf-detr - File /home/easemyai/.roboflow/models/rf-detr-large-2026.pth already exists with correct MD5 hash.
+/home/easemyai/weapons_project/rfdetr_env/lib/python3.12/site-packages/pydantic/main.py:263: FutureWarning: lr_drop is deprecated; pass it via lr_scheduler_kwargs={'lr_drop': ...} instead.
+  validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+[2026-08-25 10:08:01] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-08-25 10:08:01] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-08-25 10:08:01] [INFO] rf-detr - File /home/easemyai/.roboflow/models/rf-detr-large-2026.pth already exists with correct MD5 hash.
+[2026-08-25 10:08:01] [WARNING] rf-detr - Checkpoint has 90 classes but model is configured for 4. The detection head will be re-initialized to 4 classes.
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+/home/easemyai/weapons_project/rfdetr_env/lib/python3.12/site-packages/lightning_fabric/loggers/csv_logs.py:268: Experiment logs directory /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+[2026-08-25 10:08:02] [INFO] rf-detr - Building Roboflow train dataset with square resize at resolution 704
+[2026-08-25 10:08:02] [INFO] rf-detr - Using multi-scale training with square resize and scales: [864]
+/home/easemyai/weapons_project/rfdetr_env/lib/python3.12/site-packages/rfdetr/datasets/coco.py:1272: UserWarning: RF-DETR has changed the default training augmentation backend from Albumentations (cv2 INTER_LINEAR, no antialias) to torchvision (BILINEAR + antialias=True). Pixel values will differ slightly from previous versions; mAP may drift on existing benchmarks. To restore the previous behaviour, install rfdetr[augment] and pass aug_config=AUG_CONFIG from rfdetr.datasets.aug_configs.
+  transforms=make_coco_transforms_square_div_64(
+loading annotations into memory...
+Done (t=0.07s)
+creating index...
+index created!
+[2026-08-25 10:08:02] [INFO] rf-detr - Building Roboflow val dataset with square resize at resolution 704
+[2026-08-25 10:08:02] [INFO] rf-detr - Using multi-scale training with square resize and scales: [864]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+/home/easemyai/weapons_project/rfdetr_env/lib/python3.12/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+/home/easemyai/weapons_project/rfdetr_env/lib/python3.12/site-packages/pytorch_lightning/utilities/model_summary/model_summary.py:242: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+┏━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name        ┃ Type         ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ model       │ LWDETR       │ 33.6 M │ train │     0 │
+│ 1 │ criterion   │ SetCriterion │      0 │ train │     0 │
+│ 2 │ postprocess │ PostProcess  │      0 │ train │     0 │
+└───┴─────────────┴──────────────┴────────┴───────┴───────┘
+Trainable params: 33.6 M                                                        
+Non-trainable params: 0                                                         
+Total params: 33.6 M                                                            
+Total estimated model params size (MB): 134.495                                 
+Modules in train mode: 483                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Seed set to 42
+               Val [1m([0mEpoch [1;36m3[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.4692[0m │ [1;36m0.7270[0m │ [1;36m0.4805[0m │ [1;36m0.6488[0m │ [1;36m0.7269[0m │ [1;36m0.8192[0m │ [1;36m0.6777[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 3/45) — Per-class Metrics             [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.2777 │ 0.4907 │ 0.5376 │    0.7991 │ 0.4051 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.6758 │ 0.7859 │ 0.8950 │    0.9048 │ 0.8855 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.4542 │ 0.6697 │ 0.7481 │    0.7538 │ 0.7424 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved. New best score: 0.480
+[2026-08-25 10:39:46] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 2, monitor=val/mAP_50_95, value=0.469217)
+[2026-08-25 10:39:46] [INFO] rf-detr - Best EMA mAP improved to 0.4799 (epoch 2)
+               Val [1m([0mEpoch [1;36m6[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5056[0m │ [1;36m0.7617[0m │ [1;36m0.5220[0m │ [1;36m0.6469[0m │ [1;36m0.7611[0m │ [1;36m0.9047[0m │ [1;36m0.6778[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 6/45) — Per-class Metrics             [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.2861 │ 0.4616 │ 0.5369 │    0.8341 │ 0.3958 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7051 │ 0.7957 │ 0.9158 │    0.9375 │ 0.8950 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5257 │ 0.6833 │ 0.8305 │    0.9423 │ 0.7424 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved by 0.038 >= min_delta = 0.001. New best score: 0.518
+[2026-08-25 11:10:25] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 5, monitor=val/mAP_50_95, value=0.505637)
+[2026-08-25 11:10:25] [INFO] rf-detr - Best EMA mAP improved to 0.5180 (epoch 5)
+               Val [1m([0mEpoch [1;36m9[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5137[0m │ [1;36m0.7621[0m │ [1;36m0.5383[0m │ [1;36m0.6425[0m │ [1;36m0.7693[0m │ [1;36m0.8581[0m │ [1;36m0.7154[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 9/45) — Per-class Metrics             [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.2911 │ 0.4581 │ 0.5493 │    0.7731 │ 0.4259 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7052 │ 0.7844 │ 0.9175 │    0.9178 │ 0.9171 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5449 │ 0.6848 │ 0.8413 │    0.8833 │ 0.8030 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved by 0.011 >= min_delta = 0.001. New best score: 0.529
+[2026-08-25 11:41:27] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 8, monitor=val/mAP_50_95, value=0.513725)
+[2026-08-25 11:41:28] [INFO] rf-detr - Best EMA mAP improved to 0.5291 (epoch 8)
+              Val [1m([0mEpoch [1;36m12[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5283[0m │ [1;36m0.7749[0m │ [1;36m0.5606[0m │ [1;36m0.6489[0m │ [1;36m0.7908[0m │ [1;36m0.8811[0m │ [1;36m0.7344[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 12/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.2909 │ 0.4437 │ 0.5740 │    0.7951 │ 0.4491 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7184 │ 0.7925 │ 0.9184 │    0.9161 │ 0.9208 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5755 │ 0.7106 │ 0.8800 │    0.9322 │ 0.8333 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved by 0.013 >= min_delta = 0.001. New best score: 0.542
+[2026-08-25 12:12:36] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 11, monitor=val/mAP_50_95, value=0.528294)
+[2026-08-25 12:12:36] [INFO] rf-detr - Best EMA mAP improved to 0.5418 (epoch 11)
+              Val [1m([0mEpoch [1;36m15[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5462[0m │ [1;36m0.7778[0m │ [1;36m0.5834[0m │ [1;36m0.6569[0m │ [1;36m0.7816[0m │ [1;36m0.8436[0m │ [1;36m0.7518[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 15/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3091 │ 0.4523 │ 0.5824 │    0.7984 │ 0.4583 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7247 │ 0.7987 │ 0.9280 │    0.9379 │ 0.9182 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.6049 │ 0.7197 │ 0.8345 │    0.7945 │ 0.8788 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved by 0.011 >= min_delta = 0.001. New best score: 0.553
+[2026-08-25 12:44:18] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 14, monitor=val/mAP_50_95, value=0.546232)
+[2026-08-25 12:44:18] [INFO] rf-detr - Best EMA mAP improved to 0.5528 (epoch 14)
+              Val [1m([0mEpoch [1;36m18[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5446[0m │ [1;36m0.7821[0m │ [1;36m0.5856[0m │ [1;36m0.6640[0m │ [1;36m0.7770[0m │ [1;36m0.8732[0m │ [1;36m0.7151[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 18/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3208 │ 0.4637 │ 0.6038 │    0.8093 │ 0.4815 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7329 │ 0.8133 │ 0.9204 │    0.9047 │ 0.9366 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5801 │ 0.7152 │ 0.8067 │    0.9057 │ 0.7273 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Metric __rfdetr_effective_map__ improved by 0.003 >= min_delta = 0.001. New best score: 0.556
+[2026-08-25 13:16:09] [INFO] rf-detr - Best EMA mAP improved to 0.5561 (epoch 17)
+              Val [1m([0mEpoch [1;36m21[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5452[0m │ [1;36m0.7798[0m │ [1;36m0.5867[0m │ [1;36m0.6724[0m │ [1;36m0.7866[0m │ [1;36m0.8319[0m │ [1;36m0.7641[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 21/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3129 │ 0.4660 │ 0.5840 │    0.7593 │ 0.4745 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7333 │ 0.8103 │ 0.9291 │    0.9196 │ 0.9389 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5894 │ 0.7409 │ 0.8467 │    0.8169 │ 0.8788 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+              Val [1m([0mEpoch [1;36m24[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5393[0m │ [1;36m0.7823[0m │ [1;36m0.5846[0m │ [1;36m0.6447[0m │ [1;36m0.7876[0m │ [1;36m0.8986[0m │ [1;36m0.7183[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 24/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3150 │ 0.4468 │ 0.5937 │    0.8426 │ 0.4583 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7327 │ 0.7995 │ 0.9330 │    0.9425 │ 0.9238 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5703 │ 0.6879 │ 0.8361 │    0.9107 │ 0.7727 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+              Val [1m([0mEpoch [1;36m27[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5444[0m │ [1;36m0.7736[0m │ [1;36m0.5730[0m │ [1;36m0.6576[0m │ [1;36m0.7881[0m │ [1;36m0.8460[0m │ [1;36m0.7556[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 27/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3097 │ 0.4463 │ 0.5908 │    0.7824 │ 0.4745 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7428 │ 0.8069 │ 0.9315 │    0.9196 │ 0.9436 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5806 │ 0.7197 │ 0.8421 │    0.8358 │ 0.8485 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+              Val [1m([0mEpoch [1;36m30[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5492[0m │ [1;36m0.7768[0m │ [1;36m0.5766[0m │ [1;36m0.6590[0m │ [1;36m0.7918[0m │ [1;36m0.8565[0m │ [1;36m0.7520[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 30/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3153 │ 0.4495 │ 0.6034 │    0.7955 │ 0.4861 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7449 │ 0.8107 │ 0.9322 │    0.9278 │ 0.9366 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5875 │ 0.7167 │ 0.8397 │    0.8462 │ 0.8333 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+[2026-08-25 15:20:40] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 29, monitor=val/mAP_50_95, value=0.549243)
+              Val [1m([0mEpoch [1;36m33[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5510[0m │ [1;36m0.7749[0m │ [1;36m0.5809[0m │ [1;36m0.6655[0m │ [1;36m0.7928[0m │ [1;36m0.8749[0m │ [1;36m0.7422[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 33/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3154 │ 0.4528 │ 0.5991 │    0.8193 │ 0.4722 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7434 │ 0.8105 │ 0.9354 │    0.9346 │ 0.9363 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5943 │ 0.7333 │ 0.8438 │    0.8710 │ 0.8182 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+[2026-08-25 15:51:21] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 32, monitor=val/mAP_50_95, value=0.551035)
+              Val [1m([0mEpoch [1;36m36[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5544[0m │ [1;36m0.7762[0m │ [1;36m0.5839[0m │ [1;36m0.6665[0m │ [1;36m0.7917[0m │ [1;36m0.8808[0m │ [1;36m0.7348[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 36/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3209 │ 0.4539 │ 0.5962 │    0.8153 │ 0.4699 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7466 │ 0.8137 │ 0.9375 │    0.9437 │ 0.9315 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5957 │ 0.7318 │ 0.8413 │    0.8833 │ 0.8030 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+[2026-08-25 16:22:16] [INFO] rf-detr - Best regular checkpoint saved to /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_regular.pth (epoch 35, monitor=val/mAP_50_95, value=0.554395)
+              Val [1m([0mEpoch [1;36m39[0m/[1;36m45[0m[1m)[0m — Overall Metrics               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.5543[0m │ [1;36m0.7765[0m │ [1;36m0.5755[0m │ [1;36m0.6652[0m │ [1;36m0.7948[0m │ [1;36m0.8976[0m │ [1;36m0.7290[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m            Val (Epoch 39/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.3206 │ 0.4505 │ 0.5914 │    0.8257 │ 0.4606 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.7481 │ 0.8134 │ 0.9381 │    0.9532 │ 0.9234 │
+│[2m [0m[2mhammer [0m[2m [0m│   0.5942 │ 0.7318 │ 0.8548 │    0.9138 │ 0.8030 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘
+Monitored metric __rfdetr_effective_map__ did not improve in the last 7 records. Best score: 0.556. Signaling Trainer to stop.
+[2026-08-25 16:53:04] [INFO] rf-detr - Best total checkpoint saved from EMA (regular=0.5544, ema=0.5561)
+[2026-08-25 16:53:05] [INFO] rf-detr - Loaded best weights from /home/easemyai/weapons_project/runs_rfdetr/rfdetr_l_v5/checkpoint_best_total.pth for test evaluation.
+[2026-08-25 16:53:05] [INFO] rf-detr - Building Roboflow test dataset with square resize at resolution 704
+[2026-08-25 16:53:05] [INFO] rf-detr - Using multi-scale training with square resize and scales: [864]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+              Test [1m([0mEpoch [1;36m40[0m/[1;36m45[0m[1m)[0m — Overall Metrics              
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
+┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
+│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
+├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ [1;36m0.7436[0m │ [1;36m0.9771[0m │ [1;36m0.8289[0m │ [1;36m0.8415[0m │ [1;36m0.9429[0m │ [1;36m0.9523[0m │ [1;36m0.9339[0m │
+└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+[1;36m           Test (Epoch 40/45) — Per-class Metrics            [0m
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┓
+┃[1;36m [0m[1;36mClass  [0m[1;36m [0m┃[1;36m [0m[1;36mAP 50:95[0m[1;36m [0m┃[1;36m [0m[1;36m    AR[0m[1;36m [0m┃[1;36m [0m[1;36m    F1[0m[1;36m [0m┃[1;36m [0m[1;36mPrecision[0m[1;36m [0m┃[1;36m [0m[1;36mRecall[0m[1;36m [0m┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━┩
+│[2m [0m[2mknife  [0m[2m [0m│   0.6501 │ 0.7954 │ 0.9163 │    0.9336 │ 0.8995 │
+│[2m [0m[2mfirearm[0m[2m [0m│   0.8372 │ 0.8876 │ 0.9696 │    0.9710 │ 0.9682 │
+└─────────┴──────────┴────────┴────────┴───────────┴────────┘

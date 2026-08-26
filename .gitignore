@@ -5,9 +5,18 @@ __pycache__/
 
 datasets/
 datasets_coco/
+datasets_neg/
+datasets_neg_coco/
 datasets_degraded/
 degraded/
+sompt_neg
 datasets_merged/
+SOMPT22/
+sompt22.zip
+sompt_screen
+sompt_screen_v4
+sompt_screen_v5
+screen_v5_fp
 *.cache
 
 
