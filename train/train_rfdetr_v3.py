@@ -108,13 +108,13 @@ model.train(
     # UNCHANGED FROM v2 -- so the comparison stays interpretable
     # ---------------------------------------------------------------
     batch_size=32,
-    grad_accum_steps=1,            # effective batch 16
+    grad_accum_steps=4,            # effective batch 16
     eval_interval=3,
     num_workers=16,                # v2 ran at 95% GPU util, so this is enough
     persistent_workers=True,
     prefetch_factor=4,
     pin_memory=True,
-    compute_train_metrics=False,
+    compute_train_metrics=True,
     checkpoint_interval=10,
     log_per_class_metrics=True,
     run_test=True,
