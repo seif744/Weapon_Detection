@@ -247,7 +247,7 @@ boxes on images that contain a weapon elsewhere — not detections on weapon-fre
 Results on Video Inference: https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
 ---
 Results on Image Inference:
-<img width="800" height="800" alt="Scene1_2" src="https://github.com/user-attachments/assets/ecd1068d-f130-4c61-85f1-2933c4450dd7" />
+<img width="500" height="500" alt="Scene1_2" src="https://github.com/user-attachments/assets/ecd1068d-f130-4c61-85f1-2933c4450dd7" />
 
 ---
 
