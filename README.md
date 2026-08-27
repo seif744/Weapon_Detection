@@ -13,6 +13,8 @@ Server: `easemyai-a6000` · RTX 6000 Ada (48 GB) · CUDA 13.0 · project root `~
 | `RFDETR_Weapon_Detection_Validation_Report.pdf` | **Results, metrics and analysis, v1–v5.** Authoritative for all performance figures. |
 | This README | Setup, layout, scripts, operational pitfalls |
 
+
+Inference run on the following videos: https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
 ---
 
 ## Quick start
