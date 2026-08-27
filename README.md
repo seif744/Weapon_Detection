@@ -47,31 +47,7 @@ different torch builds and installing one into the other breaks the other.
 python3 -m venv yoloenv && source yoloenv/bin/activate && pip install ultralytics
 ```
 
----
-
-## Directory layout
-
 ```
-~/weapons_project/
-├── datasets_merged/     SOURCE OF TRUTH. YOLO format, 27,767 train images
-│   ├── images/{train,val,test}/
-│   └── labels/{train,val,test}/        *.txt, normalized cxcywh
-├── datasets_neg/        = datasets_merged + 784 SOMPT background frames
-├── datasets_coco/       RF-DETR format. SYMLINKS into datasets_merged
-├── datasets_neg_coco/   RF-DETR format. SYMLINKS into datasets_neg
-├── sompt_neg/           the 784 background frames + empty labels
-├── sompt_screen/        v4 screening output — 255 documented false positives
-├── SOMPT22/             extracted source dataset (CC BY 4.0)
-├── test_videos/         evaluation clips
-├── false_preds/         known false-positive images — negative test set
-├── runs/detect/         YOLO run outputs (legacy)
-├── runs_rfdetr/         RF-DETR run outputs
-└── *.py                 scripts, see below
-```
-
-**`datasets_coco` and `datasets_neg_coco` contain symlinks, not images.** Delete or move
-`datasets_merged` / `datasets_neg` and both become ~31,000 dead pointers. Back up the
-YOLO-format directories; the COCO ones regenerate in two minutes with `yolo2coco.py`.
 
 ---
 
@@ -146,16 +122,7 @@ training mosaics. Everything Ultralytics provided by default had to be written.
 
 ---
 
-## Common workflows
 
-### Convert a dataset for training
-
-```bash
-python yolo2coco.py --src datasets_neg --dst datasets_neg_coco
-# add --copy for real files instead of symlinks
-```
-
-Confirm the output line reports the expected image, box and background counts.
 
 ### Train
 
@@ -222,14 +189,6 @@ simultaneous training jobs once filled 62 GB of RAM because each launch appeared
 **RAM is `num_workers × prefetch_factor × batch_size`.** At 704, 16 × 4 × 32 does not fit in
 62 GB. Use `num_workers=8, prefetch_factor=2`.
 
-**Ultralytics settings are global and may point outside the project.** Check with
-`yolo settings`; `runs_dir`, `weights_dir` and `datasets_dir` have all been wrong here.
-
-**Symlinks broke under Ultralytics but are safe under COCO.** Ultralytics derives label
-paths by swapping `images`→`labels` in the resolved path, so a symlink silently pointed it
-at the wrong labels. COCO JSON names every file explicitly, so there is nothing to resolve
-wrong.
-
 **Pasting multi-line scripts into a terminal truncates.** Use `nano`, then `tail -3` to
 confirm the file ends where it should.
 
@@ -284,13 +243,10 @@ Results on Image Inference:
 | DINOv2 (code + weights) | Apache 2.0 | Clear |
 | SOMPT22 | CC BY 4.0 | Clear, attribution required |
 | Ultralytics YOLOv8 | AGPL-3.0 | **Retired** — extends to trained weights |
-| Training dataset | Unknown | **Open risk** |
 
 SOMPT22 attribution: Simsek, Cigla & Kayabol, arXiv 2208.02580. The underlying footage was
 recorded from public webcam streams the authors did not film.
 
-**Open licensing risks:** dataset provenance across six-plus merged sources, and deployment
-terms pending legal review.
 
 ---
 
