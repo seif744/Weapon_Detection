@@ -14,7 +14,6 @@ Server: `easemyai-a6000` · RTX 6000 Ada (48 GB) · CUDA 13.0 · project root `~
 | This README | Setup, layout, scripts, operational pitfalls |
 
 
-Results on Video Inference : https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
 ---
 
 ## Quick start
@@ -244,7 +243,14 @@ checkpoint gave 0.6532 and 0.67. Differences under ~0.05 are not distinguishable
 boxes on images that contain a weapon elsewhere — not detections on weapon-free scenes. Use
 `false_preds` and `sompt_neg` for that.
 
+
+Results on Video Inference: https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
 ---
+Results on Image Inference:
+<img width="1112" height="1108" alt="Scene1_2" src="https://github.com/user-attachments/assets/ecd1068d-f130-4c61-85f1-2933c4450dd7" />
+
+---
+
 
 ## Licensing
 
