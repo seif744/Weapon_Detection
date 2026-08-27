@@ -14,7 +14,7 @@ Server: `easemyai-a6000` · RTX 6000 Ada (48 GB) · CUDA 13.0 · project root `~
 | This README | Setup, layout, scripts, operational pitfalls |
 
 
-Inference run on the following videos: https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
+Results on Video Inference : https://drive.google.com/drive/folders/1WYCrUeq95WJ6cNs8-RWvVclLzFOcwToM?usp=drive_link
 ---
 
 ## Quick start
