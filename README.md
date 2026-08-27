@@ -254,8 +254,6 @@ recorded from public webcam streams the authors did not film.
 
 ## Current state
 
-Use **`runs_rfdetr/rfdetr_m_v4/checkpoint_best_total.pth`** with `--model large`.
-
 Firearm detection is strong. The outstanding problem is false alarms: 32.5 % of ordinary
 CCTV frames produce a detection at confidence 0.5, and two high-confidence failures are
 documented on weapon-free footage at 0.83 and 0.95. Threshold tuning cannot address these;
