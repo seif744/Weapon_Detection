@@ -268,6 +268,10 @@ Results on Image Inference:
 
 <img width="300" height="300" alt="Scene2_17" src="https://github.com/user-attachments/assets/2358ce3f-3a6d-4df3-8d5c-bfe65cbebd18" />
 
+
+
+<img width="300" height="300" alt="Scene5_9" src="https://github.com/user-attachments/assets/1b45df35-351d-4694-a5d6-8ce7a82d7a50" />
+
 ---
 
 
