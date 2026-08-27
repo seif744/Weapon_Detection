@@ -250,19 +250,19 @@ Results on Image Inference:
 
 
 
-<img width="500" height="500" alt="Scene1_2" src="https://github.com/user-attachments/assets/ecd1068d-f130-4c61-85f1-2933c4450dd7" />
+<img width="300" height="300" alt="Scene1_2" src="https://github.com/user-attachments/assets/ecd1068d-f130-4c61-85f1-2933c4450dd7" />
 
 
 
-<img width="1094" height="1104" alt="Scene2_10" src="https://github.com/user-attachments/assets/3eab1620-6e3e-433b-94bd-82db6638b685" />
+<img width="300" height="300" alt="Scene2_10" src="https://github.com/user-attachments/assets/3eab1620-6e3e-433b-94bd-82db6638b685" />
 
 
 
-<img width="924" height="1358" alt="Scene4_4" src="https://github.com/user-attachments/assets/f45557ce-64e9-4595-9ee3-044acdb69f18" />
+<img width="300" height="300" alt="Scene4_4" src="https://github.com/user-attachments/assets/f45557ce-64e9-4595-9ee3-044acdb69f18" />
 
 
 
-<img width="924" height="1358" alt="Scene6_10" src="https://github.com/user-attachments/assets/cd8cd735-2d6f-4b07-9dd0-cf82e567db00" />
+<img width="300" height="300" alt="Scene6_10" src="https://github.com/user-attachments/assets/cd8cd735-2d6f-4b07-9dd0-cf82e567db00" />
 
 ---
 
